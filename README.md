@@ -24,40 +24,43 @@ These instructions will help you set up your local copy of the project for devel
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/openfoam-cpp-studies.git
+    git clone https://github.com/your-username/Cpp-within-OpenFOAM.git
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd openfoam-cpp-studies
+    cd Cpp-within-OpenFOAM
     ```
 
 3. Follow the specific setup instructions in each subdirectory's README.
 
 ## Files and Directories
 
-- `boundaryConditions/` - Advanced implementation of boundary conditions.
+- `boundaryConditions/` - Includes code and run files for boundary conditions.
+  - `code/` - Contains several implementations of boundary conditions (e.g., `myvelocity`) and a make file.
+  - `run/` - Contains test cases for the boundary conditions
 - `Solvers/` - Modified solvers.
+  - `code/` - Contains several modified solvers
+  - `run/` - Contains test cases for new solvers
 - More directories to be added soon...
 
 ## Usage
 
 Detailed instructions on how to use the code can be found in each subdirectory's README. Here's a basic example to get you started:
 
-1. Compile the code:
+1. Compile the boundary conditions library:
 
     ```bash
-    cd boundaryConditions
-    ./Allwmake
+    cd boundaryConditions/code/myvelocity
+    wmake libso
     ```
+2. To use the new boundary conditions, go to one of the test cases located in `boundaryConditions/run`. Open one of the cases and add the following line to the `controlDict` file:
 
-2. Run the solver:
-
-    ```bash
-    cd ../modifiedSolvers
-    ./runSolver
-    ```
+    ```plaintext
+    libs (
+        "libmyvelocity.so"
+    );
 
 ## Future Work
 
