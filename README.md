@@ -1,7 +1,5 @@
 # Cpp-within-OpenFOAM
 
-# OpenFOAM C++ Studies
-
 This repository contains my studies and implementations within the OpenFOAM environment. These studies are inspired by Håkan Nilsson's work at Chalmers University and guided by various YouTube tutorials.
 
 
